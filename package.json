@@ -1,0 +1,24 @@
+{
+  "name": "spotter",
+  "version": "1.0.0",
+  "description": "A Tinder-inspired app for people who want to meet new workout partners.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonjanisch/spotter.git"
+  },
+  "author": "Jason Janisch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonjanisch/spotter/issues"
+  },
+  "homepage": "https://github.com/jasonjanisch/spotter#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.5",
+    "nodemon": "^1.10.0"
+  }
+}
