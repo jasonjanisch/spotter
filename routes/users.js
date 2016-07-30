@@ -48,7 +48,6 @@ users.post('/:username', function(req, res) {
   });
 });
 
-
 users.put('/:username/:updated', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {

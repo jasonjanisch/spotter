@@ -4,13 +4,52 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <link rel="stylesheet" href="default.css">
   <title>spotter</title>
 </head>
-<body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<body ng-app="spotter" layout="column">
+  <md-toolbar layout="row">
+    <h1>spotter</h1>
+  </md-toolbar>
+
+  <div flex layout="row">
+    <md-content flex id="photo">
+      Photo here
+    </md-content>
+  </div>
+
+  <div flex layout="row">
+    <md-content flex id="info">
+      <div ng-controller="queueController as queue">
+        <h3 ng-repeat="match in queue.matches">
+          {{match.username}}
+        </h3>
+      </div>
+    </md-content>
+  </div>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div ng-controller="homeController as home">
+          <h1>
+            {{home.message}}
+          </h1>
+        </div>
+        <div ng-controller="queueController as queue">
+          <h3 ng-repeat="match in queue.matches">
+            {{match.username}}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
   <script src="angular.js"></script>
 </body>
 </html>
