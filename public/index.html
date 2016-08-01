@@ -5,46 +5,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="default.css">
-  <title>spotter</title>
+  <title>spotter - Meet new workout partners!</title>
 </head>
 <body ng-app="spotter" layout="column">
   <md-toolbar layout="row">
-    <h1>spotter</h1>
+    <md-button flex="33" class="md-icon-button" aria-label="menu">
+      <i class="material-icons">menu</i>
+    </md-button>
+    <h2 flex="33">
+      spotter
+    </h2>
+    <md-button flex="33" class="md-icon-button" aria-label="chat">
+      <i class="material-icons">chat</i>
+    </md-button>
   </md-toolbar>
 
-  <div flex layout="row">
-    <md-content flex id="photo">
-      Photo here
-    </md-content>
+  <div flex-xs flex-gt-xs="50" ng-controller="queueController as queue">
+    <md-card>
+      <img ng-src="images/jj.jpg" class="md-card-image" alt="example user image">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{queue.match.name}}, {{queue.match.age}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>
+          {{queue.match.bio}}
+        </p>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="center center">
+        <md-button class="md-icon-button" ariarlabel="dismiss">
+          <i class="material-icons md-24">do_not_disturb</i>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="info">
+          <i class="material-icons">info</i>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="like">
+          <i class="material-icons md-24 red">favorite</i>
+        </md-button>
+      </md-card-actions>
+    </md-card>
   </div>
 
-  <div flex layout="row">
-    <md-content flex id="info">
-      <div ng-controller="queueController as queue">
-        <h3 ng-repeat="match in queue.matches">
-          {{match.username}}
-        </h3>
-      </div>
-    </md-content>
-  </div>
-
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div ng-controller="homeController as home">
-          <h1>
-            {{home.message}}
-          </h1>
-        </div>
-        <div ng-controller="queueController as queue">
-          <h3 ng-repeat="match in queue.matches">
-            {{match.username}}
-          </h3>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
