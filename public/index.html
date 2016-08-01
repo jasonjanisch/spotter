@@ -10,15 +10,30 @@
   <title>spotter - Meet new workout partners!</title>
 </head>
 <body ng-app="spotter" layout="column">
-  <md-toolbar layout="row">
-    <md-button flex="33" class="md-icon-button" aria-label="menu">
-      <i class="material-icons">menu</i>
-    </md-button>
-    <h2 flex="33">
-      spotter
-    </h2>
-    <md-button flex="33" class="md-icon-button" aria-label="chat">
-      <i class="material-icons">chat</i>
+  <md-toolbar layout="row" layout-align="center center">
+    <md-fab-speed-dial  md-open="false" md-direction="down" class="md-scale md-fab-top-left">
+      <md-fab-trigger>
+        <md-button class="md-icon-button md-fab md-raised" aria-label="menu">
+          <i class="material-icons md-36">menu</i>
+        </md-button>
+      </md-fab-trigger>
+      <md-fab-actions>
+        <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="profile">
+          <i class="material-icons md-24" aria-label="settings">account_circle</i>
+        </md-button>
+        <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="settings">
+          <i class="material-icons md-24" aria-label="settings">build</i>
+        </md-button>
+        <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="payment">
+          <i class="material-icons md-24" aria-label="settings">payment</i>
+        </md-button>
+      </md-fab-actions>
+    </md-fab-speed-dial>
+    <span flex></span>
+    <h2>spotter</h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="chat">
+      <i class="material-icons md-36">chat</i>
     </md-button>
   </md-toolbar>
 
@@ -43,7 +58,7 @@
           <i class="material-icons">info</i>
         </md-button>
         <md-button class="md-icon-button" aria-label="like">
-          <i class="material-icons md-24 red">favorite</i>
+          <i class="material-icons md-24 red">favorite_border</i>
         </md-button>
       </md-card-actions>
     </md-card>

@@ -10,10 +10,6 @@ function home() {
 app.controller('queueController', queue);
 function queue() {
   var vm = this;
-  // vm.matches = [
-  //   { username: 'HardcodeSampleMan' },
-  //   { username: 'AnotherHardcodeSampleBro' }
-  // ];
   vm.match = {
     name: 'Jason Janisch',
     age: '24',
