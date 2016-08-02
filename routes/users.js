@@ -26,7 +26,7 @@ users.get('/:username', function(req, res) {
   });
 });
 
-users.post('/:username', function(req, res) {
+users.post('/:username/', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {
       res.sendStatus(500);
@@ -48,7 +48,7 @@ users.post('/:username', function(req, res) {
   });
 });
 
-users.put('/:username/:updated', function(req, res) {
+users.put('/username/:username/:updated', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {
       res.sendStatus(500);
@@ -59,6 +59,126 @@ users.put('/:username/:updated', function(req, res) {
         .updateOne(
           { username: req.params.username },
           { $set: {username: req.params.updated} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
+users.put('/age/:username/:updated', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {age: req.params.updated} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
+users.put('/bio/:username/:updated', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {bio: req.params.bio} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
+users.put('/workouts/:username/:updated', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {workouts: req.params.bio} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
+users.put('/availability/:username/:updated', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {availability: req.params.bio} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
+users.put('/interests/:username/:updated', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {interests: req.params.bio} },
           function(error, result) {
             if (error) {
               res.sendStatus(500);
