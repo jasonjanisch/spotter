@@ -54,9 +54,15 @@
         <md-button class="md-icon-button" ariarlabel="dismiss">
           <i class="material-icons md-24">do_not_disturb</i>
         </md-button>
-        <md-button class="md-icon-button" aria-label="info">
-          <i class="material-icons">info</i>
-        </md-button>
+
+        <div ng-controller="bottomSheetController as ctrl" layout="column">
+          <form ng-submit="$event.preventDefault()">
+            <md-button class="md-icon-button" aria-label="info" ng-click="openBottomSheet()">
+              <i class="material-icons">info</i>
+            </md-button>
+          </form>
+        </div>
+
         <md-button class="md-icon-button" aria-label="like">
           <i class="material-icons md-24 red">favorite_border</i>
         </md-button>
