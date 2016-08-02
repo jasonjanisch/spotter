@@ -23,6 +23,7 @@
     "angular-material": "^1.1.0-rc.5",
     "angular-messages": "^1.5.8",
     "express": "^4.14.0",
+    "material-design-icons": "^2.2.3",
     "mongodb": "^2.2.5",
     "nodemon": "^1.10.0"
   }
