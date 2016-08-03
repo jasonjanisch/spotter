@@ -1,25 +1,20 @@
-var app = angular.module('spotter', ['ngMaterial']);
+var app = angular.module('spotter', ['ngMaterial', 'ngRoute']);
 
-app.controller('homeController', home);
-function home() {
-  var vm = this;
-  vm.message = 'Welcome to spotter.';
-}
-
-app.controller('queueController', queue);
-function queue() {
-  var vm = this;
-  vm.match = {
-    name: 'Jason Janisch',
-    age: '24',
-    bio: '2017 goals: change my legal name to Bowflex McProtein.',
-    details: [
-      'detail-1',
-      'detail-2',
-      'detail-3'
-    ]
-  }
-}
+app.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    .when('/queue',
+      {
+        templateUrl: 'queue/queue.view.html',
+        controller: 'queueController',
+        controllerAs: 'queue'
+      })
+    .otherwise(
+      {
+        templateUrl: '/queue/queue.view.html',
+        controller: 'queueController',
+        controllerAs: 'queue'
+      });
+}]);
 
 app.controller('bottomSheetController', bottomSheetController);
 function bottomSheetController ($scope, $mdBottomSheet) {

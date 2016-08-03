@@ -26,7 +26,7 @@ users.get('/:username', function(req, res) {
   });
 });
 
-users.post('/:username/', function(req, res) {
+users.post('/:username', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {
       res.sendStatus(500);
@@ -106,7 +106,7 @@ users.put('/bio/:username/:updated', function(req, res) {
       users
         .updateOne(
           { username: req.params.username },
-          { $set: {bio: req.params.bio} },
+          { $set: {bio: req.params.updated} },
           function(error, result) {
             if (error) {
               res.sendStatus(500);
@@ -130,7 +130,7 @@ users.put('/workouts/:username/:updated', function(req, res) {
       users
         .updateOne(
           { username: req.params.username },
-          { $set: {workouts: req.params.bio} },
+          { $set: {workouts: req.params.updated} },
           function(error, result) {
             if (error) {
               res.sendStatus(500);
