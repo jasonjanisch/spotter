@@ -12,7 +12,6 @@ function queue($http, $mdBottomSheet, $scope) {
     vm.counter++;
 
     var sendData = function() {
-      //var data = JSON.stringify(vm.match);
       var data = vm.match;
       console.log('logging var data')
       console.log(data);
@@ -21,13 +20,14 @@ function queue($http, $mdBottomSheet, $scope) {
           'Content-Type': 'application/json'
         }
       }
-      $http.post('/users/matches/testuser', data, config).success(function(error, status) {
-        console.log('logging success callback status');
-        console.log(data);
-      }).error(function(error, status) {
-        console.log('logging error callback');
-        console.log(error);
-      });
+      $http.post('/users/matches/testuser', data, config)
+        .success(function(error, status) {
+          console.log('logging success callback status');
+          console.log(data);
+        }).error(function(error, status) {
+          console.log('logging error callback');
+          console.log(error);
+        });
     }
     sendData();
     vm.getUser();

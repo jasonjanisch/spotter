@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var Client = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017/spotter';
 
+users.use(jsonParser);
+
 users.get('/all', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {
@@ -78,13 +80,13 @@ users.post('/matches/:username', function(req, res) {
       res.sendStatus(500);
       db.close();
     } else {
-      console.log('logging req.data');
-      console.log(req.data);
+      console.log('logging req.body');
+      console.log(req.body);
       var users = db.collection('users');
       users
         .updateOne(
           { username: req.params.username },
-          { $push: {matches: req.data} },
+          { $push: {matches: req.body} },
           function(error, result) {
             if (error) {
               res.sendStatus(500);
