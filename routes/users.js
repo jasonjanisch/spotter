@@ -1,8 +1,32 @@
 var express = require('express');
 var users = express.Router();
+var jsonParser = require('body-parser').json();
+var bodyParser = require('body-parser');
 
 var Client = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017/spotter';
+
+users.get('/all', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .find({ })
+        .toArray(function(error, documents) {
+          if (error) {
+            res.sendStatus(500);
+            db.close();
+          } else {
+            res.send(documents);
+            db.close();
+          }
+        });
+    }
+  });
+});
 
 users.get('/:username', function(req, res) {
   Client.connect(url, function(error, db) {
@@ -44,6 +68,32 @@ users.post('/:username', function(req, res) {
             db.close();
           }
         });
+    }
+  });
+});
+
+users.post('/matches/:username', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      console.log('logging req.data');
+      console.log(req.data);
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $push: {matches: req.data} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
     }
   });
 });

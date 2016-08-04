@@ -12,7 +12,7 @@
       </p>
     </md-card-content>
     <md-card-actions layout="row" layout-align="center center">
-      <md-button class="md-icon-button" ariarlabel="dismiss">
+      <md-button class="md-icon-button" ariarlabel="dismiss" ng-click="queue.increment()">
         <i class="material-icons md-24">do_not_disturb</i>
       </md-button>
 
@@ -24,7 +24,7 @@
         </form>
       </div>
 
-      <md-button class="md-icon-button" aria-label="like">
+      <md-button class="md-icon-button" aria-label="like" ng-click="queue.addMatch()">
         <i class="material-icons md-24 red">favorite_border</i>
       </md-button>
     </md-card-actions>
