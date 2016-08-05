@@ -1,0 +1,32 @@
+<div flex-xs flex-gt-xs="50" ng-controller="queueController as queue">
+  <md-card>
+    <img ng-src="images/jj.jpg" class="md-card-image" alt="example user image">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{queue.match.username}}, {{queue.match.age}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <p>
+        {{queue.match.bio}}
+      </p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="center center">
+      <md-button class="md-icon-button" ariarlabel="dismiss" ng-click="queue.increment()">
+        <i class="material-icons md-24">do_not_disturb</i>
+      </md-button>
+
+      <div layout="column">
+        <form ng-submit="$event.preventDefault()">
+          <md-button class="md-icon-button" aria-label="info" ng-click="queue.openBottomSheet()">
+            <i class="material-icons">info</i>
+          </md-button>
+        </form>
+      </div>
+
+      <md-button class="md-icon-button" aria-label="like" ng-click="queue.addMatch()">
+        <i class="material-icons md-24 red">favorite_border</i>
+      </md-button>
+    </md-card-actions>
+  </md-card>
+</div>
