@@ -7,10 +7,8 @@ queue.$inject = ['$http', '$mdBottomSheet', '$scope'];
 function queue($http, $mdBottomSheet, $scope) {
   var vm = this;
   vm.counter = 0;
-
   vm.addMatch = function() {
     vm.counter++;
-
     var sendData = function() {
       var data = vm.match;
       console.log('logging var data')
@@ -20,12 +18,31 @@ function queue($http, $mdBottomSheet, $scope) {
           'Content-Type': 'application/json'
         }
       }
-      $http.post('/users/matches/testuser', data, config)
+      $http.post('/users/matches/You', data, config)
         .success(function(error, status) {
           console.log('logging success callback status');
           console.log(status);
         }).error(function(error, status) {
           console.log('logging error callback');
+          console.log(error);
+        });
+    }
+    sendData();
+    vm.getUser();
+  }
+  vm.dismissMatch = function() {
+    vm.counter++;
+    var sendData = function() {
+      var data = vm.match;
+      var config = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      $http.post('/users/matches/You', data, config)
+        .success(function(error, status) {
+          console.log(status);
+        }).error(function(error, status) {
           console.log(error);
         });
     }
