@@ -23,7 +23,7 @@ function queue($http, $mdBottomSheet, $scope) {
       $http.post('/users/matches/testuser', data, config)
         .success(function(error, status) {
           console.log('logging success callback status');
-          console.log(data);
+          console.log(status);
         }).error(function(error, status) {
           console.log('logging error callback');
           console.log(error);
@@ -43,7 +43,7 @@ function queue($http, $mdBottomSheet, $scope) {
   vm.openBottomSheet = function() {
     $mdBottomSheet.show({
       scope: $scope,
-      template: '<md-bottom-sheet><md-list flex><h4>Bio</h4><p>{{queue.match.bio}}</p><h4>Favorite workouts</h4><p>Weight training, cardio, yoga, team sports</p><h4>Availability</h4><p>Sun, Tue, Thur, Sat</p><h4>Interests</h4><p>Gaming, music, snowboarding</p></md-bottom-sheet>'
+      template: '<md-bottom-sheet><md-list flex><h4>Bio</h4><p>{{queue.match.bio}}</p><h4>Favorite workouts</h4><p>{{queue.match.workouts}}</p><h4>Availability</h4><p>{{queue.match.availability}}</p><h4>Interests</h4><p>{{queue.match.interests}}</p></md-bottom-sheet>'
     });
   }
 }
