@@ -1,5 +1,7 @@
 # spotter
 
+![alt text](http://i.imgur.com/qUjPrua.png "spotter")
+
 ## An AngularJS/MEAN stack app for people who want to meet new workout partners. Flavored with Google material design. Inspired by Tinder. Spotter is a work-in-progress. Contact me on LinkedIn to hear more about it!
 
 ### Features
