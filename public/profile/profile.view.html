@@ -1,0 +1,26 @@
+<div flex-xs flex-gt-xs="50" ng-controller="profileController as profile">
+  <md-card>
+    <img ng-src="images/jj.jpg" class="md-card-image" alt="example user image">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{profile.myProfile.username}}, {{profile.myProfile.age}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <p>
+        {{profile.myProfile.bio}}
+      </p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="center center">
+
+      <div layout="column">
+        <form ng-submit="$event.preventDefault()">
+          <md-button class="md-icon-button" aria-label="info" ng-click="profile.openBottomSheet()">
+            <i class="material-icons">info</i>
+          </md-button>
+        </form>
+      </div>
+
+    </md-card-actions>
+  </md-card>
+</div>
