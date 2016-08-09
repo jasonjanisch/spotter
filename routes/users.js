@@ -298,6 +298,30 @@ users.put('/interests/:username/:updated', function(req, res) {
   });
 });
 
+users.put('/photo/:username/:updated', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {photo: 'http://i.imgur.com/' + req.params.updated + '.jpg'} },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+              db.close();
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
 users.put('/resetmatches/:username', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {
