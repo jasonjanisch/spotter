@@ -1,1 +1,44 @@
-Editor view
+<div ng-controller="editorController as editor">
+  <div layout="column" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+      <div>
+        <form name="editorForm">
+          <div layout-gt-sm="column">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Age</label>
+              <input ng-model="editor.age">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Bio</label>
+              <input ng-model="editor.bio" md-maxlength="100">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Favorite workouts</label>
+              <input ng-model="editor.workouts" md-maxlength="50">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Availability</label>
+              <input ng-model="editor.availability" md-maxlength="50">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Interests</label>
+              <input ng-model="editor.interests" md-maxlength="50">
+            </md-input-container>
+          </div>
+          <div layout="row" layout-align="center">
+            <a href="#profile">
+              <md-button class="md-raised md-warn" aria-label="cancel">
+                Cancel
+              </md-button>
+            </a>
+            <a href="#profile">
+              <md-button class="md-raised" aria-label="submit" ng-click="editor.updateInfo(editor.age, editor.bio, editor.workouts, editor.availability, editor.interests)">
+                Submit
+              </md-button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </md-content>
+  </div>
+</div>
