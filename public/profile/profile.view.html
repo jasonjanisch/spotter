@@ -5,7 +5,11 @@
       <md-card-title-text>
         <span class="md-headline">{{profile.myProfile.username}}, {{profile.myProfile.age}}</span>
       </md-card-title-text>
-      <md-button class="md-raised">Edit profile</md-button>
+      <a href="#editor">
+        <md-button class="md-icon-button md-fab">
+          <i class="material-icons md-24" aria-label="settings">mode_edit</i>
+        </md-button>
+      </a>
     </md-card-title>
     <md-card-content>
       <p>
@@ -13,7 +17,6 @@
       </p>
     </md-card-content>
     <md-card-actions layout="row" layout-align="center center">
-
       <div layout="column">
         <form ng-submit="$event.preventDefault()">
           <md-button class="md-icon-button" aria-label="info" ng-click="profile.openBottomSheet()">
@@ -21,7 +24,6 @@
           </md-button>
         </form>
       </div>
-
     </md-card-actions>
   </md-card>
 </div>
