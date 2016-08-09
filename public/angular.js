@@ -14,6 +14,12 @@ app.config(['$routeProvider', function($routeProvider) {
         controller: 'profileController',
         controllerAs: 'profile'
       })
+    .when('/editor',
+      {
+        templateUrl: 'editor/editor.view.html',
+        controller: 'editorController',
+        controllerAs: 'editor'
+      })
     .otherwise(
       {
         templateUrl: '/queue/queue.view.html',
