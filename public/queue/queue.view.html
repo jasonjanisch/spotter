@@ -1,6 +1,6 @@
 <div flex-xs flex-gt-xs="50" ng-controller="queueController as queue">
   <md-card>
-    <img ng-src="images/jj.jpg" class="md-card-image" alt="example user image">
+    <img ng-src="{{queue.match.photo}}" class="md-card-image" alt="example user image">
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">{{queue.match.username}}, {{queue.match.age}}</span>
