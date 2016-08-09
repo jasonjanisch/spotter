@@ -124,6 +124,36 @@ users.post('/dismissals/:username', function(req, res) {
   });
 });
 
+users.put('/:username', function(req, res) {
+  Client.connect(url, function(error, db) {
+    if (error) {
+      res.sendStatus(500);
+      db.close();
+    } else {
+      var users = db.collection('users');
+      users
+        .updateOne(
+          { username: req.params.username },
+          { $set: {
+              age: req.body.age,
+              bio: req.body.bio,
+              workouts: req.body.workouts,
+              availability: req.body.availability,
+              interests: req.body.interests
+            }
+          },
+          function(error, result) {
+            if (error) {
+              res.sendStatus(500);
+            } else {
+              res.send();
+              db.close();
+            }
+          });
+    }
+  });
+});
+
 users.put('/username/:username/:updated', function(req, res) {
   Client.connect(url, function(error, db) {
     if (error) {
