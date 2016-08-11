@@ -1,0 +1,17 @@
+<div ng-controller="matchesController" ng-cloak layout-gt-sm="row" layout="column">
+  <md-content>
+    <md-list flex>
+      <md-subheader class="md-no-sticky">
+        Your spotters
+      </md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="match in matches.myMatches">
+        <img ng-src="{{match.photo}}" class="md-avatar">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{match.username}}</h3>
+          <h4>{{match.workouts}}</h4>
+          <p>{{match.bio}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>

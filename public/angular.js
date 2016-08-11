@@ -20,6 +20,12 @@ app.config(['$routeProvider', function($routeProvider) {
         controller: 'editorController',
         controllerAs: 'editor'
       })
+    .when('/matches',
+      {
+        templateUrl: 'matches/matches.view.html',
+        controller: 'matchesController',
+        controllerAs: 'matches'
+      })
     .otherwise(
       {
         templateUrl: '/queue/queue.view.html',
