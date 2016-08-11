@@ -33,3 +33,9 @@ app.config(['$routeProvider', function($routeProvider) {
         controllerAs: 'queue'
       });
 }]);
+
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue-grey')
+    .accentPalette('cyan');
+});

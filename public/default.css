@@ -3,4 +3,17 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
-.red { color: red }
+.red { color: red; }
+
+.brand {
+  width: 30vh;
+  padding-left: 25px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+
+.top-icon { padding-right: 1em; }

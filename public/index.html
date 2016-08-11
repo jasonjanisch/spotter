@@ -4,42 +4,45 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="default.css">
   <title>spotter - Meet new workout partners!</title>
 </head>
 <body ng-app="spotter" layout="column">
-  <md-toolbar layout="row" layout-align="center center">
-    <md-fab-speed-dial  md-open="false" md-direction="down" class="md-scale md-fab-top-left">
-      <md-fab-trigger>
-        <md-button class="md-icon-button md-fab md-raised" aria-label="menu">
-          <i class="material-icons md-36">menu</i>
-        </md-button>
-      </md-fab-trigger>
-      <md-fab-actions>
-        <a href="#queue">
-          <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="queue">
-            <i class="material-icons md-24" aria-label="settings">person_add</i>
+  <md-toolbar layout="row" layout-align="center center" class="md-medium-tall">
+    <div class="hamburger">
+      <md-fab-speed-dial md-open="false" md-direction="down" class="md-scale md-fab-top-left">
+        <md-fab-trigger>
+          <md-button class="md-icon-button md-fab md-raised" aria-label="menu">
+            <i class="material-icons md-36">menu</i>
           </md-button>
-        </a>
-        <a href="#profile">
-          <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="profile">
-            <i class="material-icons md-24" aria-label="settings">account_circle</i>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <a href="#queue">
+            <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="queue">
+              <i class="material-icons md-24" aria-label="settings">person_add</i>
+            </md-button>
+          </a>
+          <a href="#profile">
+            <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="profile">
+              <i class="material-icons md-24" aria-label="settings">account_circle</i>
+            </md-button>
+          </a>
+          <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="settings">
+            <i class="material-icons md-24" aria-label="settings">build</i>
           </md-button>
-        </a>
-        <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="settings">
-          <i class="material-icons md-24" aria-label="settings">build</i>
-        </md-button>
-        <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="payment">
-          <i class="material-icons md-24" aria-label="settings">payment</i>
-        </md-button>
-      </md-fab-actions>
+          <md-button class="md-icon-button md-fab md-raised md-mini" aria-label="payment">
+            <i class="material-icons md-24" aria-label="settings">payment</i>
+          </md-button>
+        </md-fab-actions>
+      </div>
     </md-fab-speed-dial>
     <span flex></span>
-    <h2>spotter</h2>
+    <img src="images/spotter-logo-white.png" class="brand" alt="spotter">
     <span flex></span>
-    <a href="#matches">
+    <a href="#matches" class="top-icon">
       <md-button class="md-icon-button" aria-label="chat">
         <i class="material-icons md-36">chat</i>
       </md-button>
