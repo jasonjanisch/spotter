@@ -3,4 +3,6 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
-.red { color: red }
+.red { color: red; }
+
+.brand { width: 30vh; }
