@@ -5,6 +5,15 @@
 
 .red { color: red; }
 
-.brand { width: 30vh; }
+.brand {
+  width: 30vh;
+  padding-left: 25px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
 
 .top-icon { padding-right: 1em; }
