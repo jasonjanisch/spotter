@@ -2,6 +2,8 @@
 
 ![alt text](http://i.imgur.com/qUjPrua.png "spotter")
 
+![alt text](http://i.imgur.com/Iwzhvlu.png "queue example")
+
 ## An AngularJS/MEAN stack app for people who want to meet new workout partners. Flavored with Google material design. Inspired by Tinder. Spotter is a work-in-progress. Contact me on LinkedIn to hear more about it!
 
 ### Features
@@ -13,17 +15,22 @@
 * Update settings.
 * Update payment information.
 
+![alt text](http://i.imgur.com/ieQrKwl.png "view your spotters")
+
 ## Technologies used:
 
 #### Front End Frameworks and Design Principles
 * AngularJS
 * Google material design
 
-#### Back End
+#### Back end and package management
+* Node.js
 * Express.js
 
 #### Datastore
 * MongoDB
 
-#### Package Management
-* Node.js
+![alt text](http://i.imgur.com/WnogCxY.png "view your profile")
+![alt text](http://i.imgur.com/mhtc4Va.png "edit your profile")
+![alt text](http://i.imgur.com/GXVVvUg.png "view additional details")
+![alt text](http://i.imgur.com/mLfmzEr.png "hamburger style speed dial menu")
