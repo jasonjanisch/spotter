@@ -1,6 +1,6 @@
 # spotter
 
-![alt text](http://i.imgur.com/qUjPrua.png "spotter")
+![alt text](http://i.imgur.com/qBqxj1H.png "spotter")
 
 ![alt text](http://i.imgur.com/Iwzhvlu.png "queue example")
 
